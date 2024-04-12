@@ -21,21 +21,21 @@ function resetColorHome(page) {
     switch (page) {
         case about:     resetColor("about","home","255px","95px"); break;
         case portfolio: resetColor("portfolio","home","452px","150px"); break;
-        case contact: resetColor("contact","home","706px","127px"); break;
+        case contact:   resetColor("contact","home","706px","127px"); break;
     }
 }
 function changeColorAbout(page) {
     switch (page) {
-        case home: changeColor("about","home","255px","95px"); break;
+        case home:      changeColor("about","home","255px","95px"); break;
         case portfolio: changeColor("about","portfolio","255px","95px"); break;
-        case contact: changeColor("about","contact","255px","95px"); break;
+        case contact:   changeColor("about","contact","255px","95px"); break;
     }
 }
 function resetColorAbout(page) {
     switch (page) {
-        case home: resetColor("home","about","71px","85px"); break;
+        case home:      resetColor("home","about","71px","85px"); break;
         case portfolio: resetColor("portfolio","about","452px","150px"); break;
-        case contact: resetColor("contact","about","706px","127px"); break;
+        case contact:   resetColor("contact","about","706px","127px"); break;
     }
 }
 function changeColorPortfolio(page) {
@@ -65,4 +65,20 @@ function resetColorContact(page) {
         case about: resetColor("about","contact","255px","95px"); break
         case portfolio: resetColor("portfolio","contact","452px","150px"); break
     }        
+}
+
+function showText() {
+    var tbinfo = document.getElementById("tbinfo");
+    tbinfo.style.display = "block";
+ 
+    tbinfo.style.opacity = "2"; // Ensure the element is fully visible
+}
+
+function hideText() {
+    var tbinfo = document.getElementById("tbinfo");
+
+    tbinfo.style.opacity = "0"; // Make the element transparent
+    setTimeout(function() {
+        tbinfo.style.display = "none"; // Hide the element after the transition ends
+    }, 1000); // Adjust the delay to match the transition duration
 }

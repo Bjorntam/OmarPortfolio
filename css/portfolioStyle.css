@@ -9,7 +9,7 @@
     overflow-x: hidden;
   }
   .main-container{
-    height: 500px;
+    height: 800px;
     width: 1325px;
     position: absolute;
     left: 50%;
@@ -112,12 +112,33 @@
     .item1{
         font-size: 14px;
         width: 160px;
+        height: 226px;
+        transition: height 0.3s ease;
+    }
+    .item1:hover{
+      height: 500px;
     }
     .item1 p{
         margin-top: 15px;
     }
+    .tbinfo{
+      position: absolute;
+      display: none;
+      width: 220px;
+      bottom: 100px;
+      left: 20px;
+      color: white;
+      font-size: 15px;
+      text-align: justify;
+    }
     .item2{
+        width: 220px;
+        height: 210px;
         text-align: center;
+        transition: height 0.3s ease;
+    }
+    .item2:hover{
+      height: 500px;
     }
     .item2 p{
         margin-top: 15px;
@@ -127,6 +148,13 @@
     }
     .item3{
         font-size: 14px;
+        
+        height: 230px;
+        text-align: center;
+        transition: height 0.3s ease;
+    }
+    .item3:hover{
+      height: 500px;
     }
     .item3 p{
         margin-top: 15px;
