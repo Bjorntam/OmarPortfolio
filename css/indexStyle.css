@@ -85,3 +85,11 @@
     top: 30px;
     left: -70px;
   }
+  .footer{
+    color: white;
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: -280px;
+    width: 50%;
+  }

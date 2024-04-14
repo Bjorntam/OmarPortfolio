@@ -267,3 +267,12 @@
 .contact .container .contactForm .formBox .inputBox input[type="submit"]:hover{
   background: #21897E;
 }
+.footer{
+  color: white;
+  text-align: center;
+  display: block;
+  margin: auto;
+  margin-top: -40px;
+  
+  width: 50%;
+}

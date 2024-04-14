@@ -118,7 +118,14 @@
     font-size:13px;
     text-align: center;
     color:#FFFFFF;
-    
     margin:9px;
     display:inline-block;
+    }
+    .footer{
+      color: white;
+      text-align: center;
+      display: block;
+      margin: auto;
+      margin-top: -370px;
+      width: 50%;
     }

@@ -67,18 +67,82 @@ function resetColorContact(page) {
     }        
 }
 
-function showText() {
-    var tbinfo = document.getElementById("tbinfo");
-    tbinfo.style.display = "block";
- 
-    tbinfo.style.opacity = "2"; // Ensure the element is fully visible
+
+function toggleText(info,toggle,expand,reset,dotitem,dotinfo) { 
+    var info = document.getElementById(info);
+    var toggle = document.getElementById(toggle);
+
+    if (info.style.opacity === "0" || info.style.opacity === "") {
+        toggle.style.height = expand;
+        info.style.visibility = "visible";
+        info.style.opacity = "1";
+        info.style.transition = "opacity 1s ease, visibility 2s ease";       
+    } else {
+        toggle.style.height = reset;
+        info.style.visibility ="hidden";
+        info.style.opacity = "0";
+        info.style.transition = "opacity 0.2s ease, visibility 0.5s ease";
+    }
+
+    // Add event listener to the document body
+    document.body.addEventListener('click', function(event) {
+    // Check if the clicked element is not part of .item1 or .tbinfo
+    if (!event.target.closest(dotitem) && !event.target.closest(dotinfo)) {
+        toggle.style.height = reset; 
+        info.style.opacity = "0"; 
+        info.style.visibility = "hidden";
+        info.style.transition = "opacity 0.2s ease, visibility 0.5s ease";
+    }   
+});
 }
 
-function hideText() {
-    var tbinfo = document.getElementById("tbinfo");
-
-    tbinfo.style.opacity = "0"; // Make the element transparent
-    setTimeout(function() {
-        tbinfo.style.display = "none"; // Hide the element after the transition ends
-    }, 1000); // Adjust the delay to match the transition duration
+function toggleItem1(){
+        toggleText("tbinfo","tbtoggle","400px","226px",".item1",".tbinfo");
 }
+function toggleItem2(){
+        toggleText("figinfo","figtoggle","400px","210px",".item2",".figinfo");
+}
+function toggleItem3(){
+        toggleText("pcinfo","pctoggle","400px","230px",".item3",".pcinfo");
+}
+
+
+
+
+
+
+// function toggleText() { 
+//     var tbinfo = document.getElementById("tbinfo");
+//     var tbtoggle = document.getElementById("tbtoggle");
+
+//     if (tbinfo.style.opacity === "0" || tbinfo.style.opacity === "") {
+//         tbtoggle.style.height = "500px";
+//         tbinfo.style.visibility = "visible";
+//         tbinfo.style.opacity = "1";
+//         tbinfo.style.transition = "opacity 1s ease, visibility 2s ease";       
+//     } else {
+//         tbtoggle.style.height = "226px";
+//         tbinfo.style.visibility ="hidden";
+//         tbinfo.style.opacity = "0";
+//         tbinfo.style.transition = "opacity 0.2s ease, visibility 0.5s ease";
+//     }
+// }
+
+// // Add event listener to the document body
+// document.body.addEventListener('click', function(event) {
+//     // Check if the clicked element is not part of .item1 or .tbinfo
+//     if (!event.target.closest('.item1') && !event.target.closest('.tbinfo')) {
+//         resetText(); // Reset the text
+//     }   
+// });
+
+// // Function to reset the text to its initial state
+// function resetText() {
+//     var tbinfo = document.getElementById("tbinfo");
+//     var tbtoggle = document.getElementById("tbtoggle");
+
+//     tbtoggle.style.height = "226px"; // Reset height
+//     tbinfo.style.opacity = "0"; // Hide the element
+//     tbinfo.style.visibility = "hidden"; // Hide the element
+//     tbinfo.style.transition = "opacity 0.2s ease, visibility 0.5s ease";
+// }
